@@ -1,8 +1,8 @@
-from rest_framework import serializers
+from rest_framework import generics
 from .models import MenuUser
 
 
-class MenuUserSerializer(serializers.ModelSerializer):
+class MenuUserSerializer(generics.ListCreateAPIView):
     class Meta:
         model = MenuUser
         fields = '__all__'

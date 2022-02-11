@@ -22,11 +22,11 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # SECURITY WARNING: keep the secret key used in production secret!
 SECRET_KEY = 'django-insecure-_4a_hfn&m8w+n7pm!)s(q@+k&7wk7_0s2x6gst=8qji**lmm+q'
 CHECK_TIME = os.environ.get('CHECK_TIME',23)
-
+ADMIN_ID = 0 # Nora admin user 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['localhost','127.0.0.1']
 
 
 # Application definition
@@ -42,7 +42,14 @@ INSTALLED_APPS = [
     'menu.apps.MenuConfig', #Local
     'menu_user.apps.MenuUserConfig', #Local
     'user.apps.UserConfig', #Local
+    'commons', #Utils
 ]
+# new
+REST_FRAMEWORK = {
+    'DEFAULT_PERMISSION_CLASSES':[
+        'rest_framework.permissions.AllowAny'
+    ]
+}
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
