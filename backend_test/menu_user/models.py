@@ -13,7 +13,7 @@ class MenuUser(models.Model):
         "menu.MenuOptions", on_delete=models.CASCADE, null=False,
         blank=False)
     quantity = models.IntegerField(default=1)
-    especification = models.CharField(max_length=250, null=False,
+    specification = models.CharField(max_length=250, null=False,
         blank=False)
     order_date = models.DateField(default=time(option=0))
 

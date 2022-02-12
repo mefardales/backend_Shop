@@ -7,11 +7,10 @@ from rest_framework import status
 @api_view(['GET'])
 def listUser(request, id):
     try:
-        user = User.get(id=id)
+        user = User.objects.get(id=id)
     except User.DoesNotExist:
         return Response({'Error user does not exist'},status=status.HTTP_404_NOT_FOUND)
-    user = User.objects.all()
-    serializer = UserSereializer(user, many=True)
+    serializer = UserSerializer(user)
     return Response(serializer.data, status=status.HTTP_200_OK)
 
 @api_view(['POST'])

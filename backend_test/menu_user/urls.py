@@ -1,7 +1,7 @@
 from django.urls import path
-from . import views
+from .views import UserMenuAPIView as views
 
 urlpatterns = [
-    path('<int:user_id>/list', views.getOrder, name='getOrder'),
+    path('list/<int:user_id>', views.getOrder, name='getOrder'),
     path('<int:user_id>', views.createOrder, name='createOrder'),
 ]
