@@ -16,12 +16,16 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path, include
 from rest_framework.schemas import get_schema_view
+from rest_framework.documentation import include_docs_urls
+from rest_framework_swagger.views import get_swagger_view
 
-schema_view = get_schema_view(title='Cornershop Test')
+schema_view = get_swagger_view(title='Cornershop Test')
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('api/v1/menu/', include('menu.urls')),
     path('api/v1/menuuser/', include('menu_user.urls')),
     path('api/v1/user/', include('user.urls')),
-    path('schema/',schema_view)
+    path('docs/',include_docs_urls(title='Cornershop Test')),
+    #path('schema/',schema_view),
+    path('swagger-docs/',schema_view),
 ]
