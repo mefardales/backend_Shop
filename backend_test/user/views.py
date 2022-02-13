@@ -6,6 +6,9 @@ from rest_framework import status
 
 @api_view(['GET'])
 def listUser(request, id):
+    '''
+    List users data
+    '''
     try:
         user = User.objects.get(id=id)
     except User.DoesNotExist:
@@ -15,6 +18,9 @@ def listUser(request, id):
 
 @api_view(['POST'])
 def createUser(request):
+    '''
+    Create user
+    '''
     serializer = UserSerializer(data=request.data)
     if serializer.is_valid():
         serializer.save()

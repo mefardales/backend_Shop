@@ -19,7 +19,6 @@ def send_slack(options):
                 menu_options.append(values)
 
     payload_descriptions = str(menu_options)
-    #payload_descriptions = options
     data_description = "Hola este es el menu de hoy {} {}\n".format(
         url_menu, payload_descriptions)
     dd = {"text":data_description}

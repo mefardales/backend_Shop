@@ -16,6 +16,9 @@ class UserMenuAPIView(ViewSet):
 
     @api_view(['GET'])
     def getOrder(request, user_id):
+        '''
+        Get order from user
+        '''
         try:
             User.objects.get(id=user_id)
         except User.DoesNotExist:
@@ -33,6 +36,9 @@ class UserMenuAPIView(ViewSet):
     #FIXME
     @api_view(['POST'])
     def createOrder(request, user_id):
+        '''
+        Create order by admin
+        '''
         if int(time(1)) > settings.CHECK_TIME:
             return Response({'Your request must be before 11:00 AM'},
                            status=status.HTTP_406_NOT_ACCEPTABLE)

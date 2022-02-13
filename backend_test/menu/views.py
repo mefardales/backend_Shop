@@ -12,6 +12,9 @@ from .task import send_slack
 #list menu
 @api_view(['GET'])
 def listMenu(request):
+    '''
+    List Menu for users
+    '''
     try:
         menu = Menu.objects.all()
     except Menu.DoesNotExist:
@@ -22,6 +25,9 @@ def listMenu(request):
 #create menu
 @api_view(['POST'])
 def createMenu(request, user_id):
+    '''
+    Create menu
+    '''
     if user_id != settings.ADMIN_ID:
         raise ValidationError(
             {'Error invalid user'}
@@ -38,6 +44,9 @@ def createMenu(request, user_id):
 #create menu options
 @api_view(['POST'])
 def createMenuOptions(request, user_id):
+    '''
+    Create menu options
+    '''
     if user_id != settings.ADMIN_ID:
         raise ValidationError(
             {'Error the user must be admin'}
@@ -60,6 +69,9 @@ def createMenuOptions(request, user_id):
 #update menu options
 @api_view(['PUT'])
 def updateMenuOptions(request, user_id):
+    '''
+    Update menu options
+    '''
     if user_id != settings.ADMIN_ID:
         menuOption = MenuOptions.objects.get(id=user_id)
         serializer = MenuOptionsSerializer(instance=menuOption, data=request.data)
@@ -78,6 +90,9 @@ def updateMenuOptions(request, user_id):
 #get menu
 @api_view(['GET'])
 def getMenu(request, uuid):
+    '''
+    Get menu of the day
+    '''
     try:
         menu = Menu.objects.get(uuid=uuid)
     except Menu.DoesNotExist:
