@@ -14,8 +14,9 @@ def send_slack(options):
 
     menu_options = []
     for values in options:
-        #for v in values:
-        menu_options.append(values)
+        for key,values in values.items():
+            if key == 'description':
+                menu_options.append(values)
 
     payload_descriptions = str(menu_options)
     #payload_descriptions = options
