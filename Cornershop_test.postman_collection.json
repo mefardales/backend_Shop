@@ -1,0 +1,281 @@
+{
+	"info": {
+		"_postman_id": "5d95a343-ea9f-49e6-8036-12e1230ec27f",
+		"name": "Cornershop_test",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "listMenu",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8000/api/v1/menu",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"v1",
+						"menu"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "getMenu",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8000/api/v1/menu/8881ce82-8bbc-11ec-9d22-705681b4b5a7",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"v1",
+						"menu",
+						"8881ce82-8bbc-11ec-9d22-705681b4b5a7"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "createMenu",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"date_menu\":\"2022-01-21\",\n    \"options\": [\n        {\n            \"menu\": 1,\n            \"option\": 1,\n            \"description\": \"Tacos al pastor\"\n        },\n        {\n            \"menu\": 1,\n            \"option\": 2,\n            \"description\": \"Alambre cubano\"\n        },\n        {\n            \"menu\": 1,\n            \"option\": 3,\n            \"description\": \"Quesadillas\"\n        },\n        {\n            \"menu\": 1,\n            \"option\": 4,\n            \"description\": \"Hamburguesa a la mexicana\"\n        }\n    ]\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8000/api/v1/menu/create/0",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"v1",
+						"menu",
+						"create",
+						"0"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "createMenuOption",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"menu\": 1,\n\t\"option\" : 1,\n\t\"description\": \"Carne enchilada muuucho chileee\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8000/api/v1/menu/create/menuoptions/0",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"v1",
+						"menu",
+						"create",
+						"menuoptions",
+						"0"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "updateMenuOption",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"menu\": 1,\n\t\"option\" : 1,\n\t\"description\": \"Pastel enchiladoo \"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8000/api/v1/menu/update/menuoptions/1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"v1",
+						"menu",
+						"update",
+						"menuoptions",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "createUser",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"id\": 4,\n    \"name\": \"Pepe\",\n    \"username\": \"psuarez\",\n    \"email\": \"pepe@gmail.com\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8000/api/v1/user/",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"v1",
+						"user",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "getUser",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8000/api/v1/user/2",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"v1",
+						"user",
+						"2"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "createOrder",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"menu\": 1,\n\t\"menu_option\": 1,\n\t\"quantity\": 2,\n\t\"specification\": \"Con queso extraaaaaa\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8000/api/v1/menuuser/1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"v1",
+						"menuuser",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "getOrder",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8000/api/v1/menuuser/list/1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"v1",
+						"menuuser",
+						"list",
+						"1"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
