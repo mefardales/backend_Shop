@@ -27,7 +27,7 @@ ADMIN_ID = 0 # Nora admin user
 DEBUG = True
 
 ALLOWED_HOSTS = ['localhost','127.0.0.1']
-
+SLACK_WEBHOOK = 'https://hooks.slack.com/services/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'
 
 # Application definition
 

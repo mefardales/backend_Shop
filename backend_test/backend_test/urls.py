@@ -26,6 +26,5 @@ urlpatterns = [
     path('api/v1/menuuser/', include('menu_user.urls')),
     path('api/v1/user/', include('user.urls')),
     path('docs/',include_docs_urls(title='Cornershop Test')),
-    #path('schema/',schema_view),
     path('swagger-docs/',schema_view),
 ]

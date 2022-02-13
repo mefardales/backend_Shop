@@ -7,6 +7,7 @@ from .serializers import MenuSerializer
 from .serializers import MenuOptionsSerializer
 from rest_framework.decorators import api_view
 from rest_framework import status
+from .task import send_slack
 
 #list menu
 @api_view(['GET'])
@@ -27,6 +28,7 @@ def createMenu(request, user_id):
         )
     serializer = MenuSerializer(data=request.data)
     if serializer.is_valid():
+        send_slack(request.data['options'])
         serializer.save()
         return Response(serializer.data, status=status.HTTP_200_OK)
     else:
